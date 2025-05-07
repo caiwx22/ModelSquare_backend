@@ -4,7 +4,6 @@ from langchain_community.utilities import OpenWeatherMapAPIWrapper
 from langchain_core.tools import Tool
 
 from dotenv import load_dotenv
-import os
 
 # 加载环境变量
 load_dotenv()
