@@ -1,13 +1,15 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_deepseek import ChatDeepSeek
 
-from langchain_community.chat_message_histories import ChatMessageHistory
+from langchain_community.chat_message_histories import ChatMessageHistory, RedisChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 from dotenv import load_dotenv
+import os
 
 # 加载环境变量
 load_dotenv()
+redis_url = os.environ.get("REDIS_URL", "redis://localhost:6379/0")
 
 # 定义 Prompt 模板，加入 history
 prompt = ChatPromptTemplate.from_messages(
@@ -25,13 +27,20 @@ llm = ChatDeepSeek(
     max_tokens=512,
 )
 
-# 存储对话历史
-store = {}
+# 缓存存储对话历史
+# store = {}
 
 def get_session_history(session_id: str):
-    if session_id not in store:
-        store[session_id] = ChatMessageHistory()
-    return store[session_id]
+    # Redis 持久化记忆
+    return RedisChatMessageHistory(
+        session_id=session_id,
+        url=redis_url,
+        ttl=None  # None 表示永久保存记录；你也可以设置为 86400 表示 1 天
+    )
+    # 缓存记忆
+    # if session_id not in store:
+    #     store[session_id] = ChatMessageHistory()
+    # return store[session_id]
 
 # 构建支持对话记忆的 chain
 chain_with_memory = RunnableWithMessageHistory(
