@@ -47,11 +47,11 @@ deepseek_v3_agent_chain_with_memory = RunnableWithMessageHistory(
 )
 
 """
-response = deepseek_v3_agent_chain_with_memory.stream(
-    input={"input": "北京的天气如何？"},
-    config={"configurable": {"session_id": "session_1746627103884_fa9ac049-c626-4dc1-982b-1f45b0e434ab"}}
-)
-
-for chunk in response:
-    print(chunk)
+if __name__ == '__main__':
+    response = deepseek_v3_agent_chain_with_memory.stream(
+        input={"input": "帮我用arxiv搜索一下提出transformer模型的论文标题是什么"},
+        config={"configurable": {"session_id": "session_1746627103884_fa9ac049-c626-4dc1-982b-1f45b0e434ab"}}
+    )
+    for chunk in response:
+        print(chunk)
 """

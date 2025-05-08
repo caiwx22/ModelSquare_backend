@@ -9,7 +9,7 @@ from langserve import add_routes
 app = FastAPI(
     title="LangChain Server",
     version="1.0",
-    description="基于 LangChain 的 LLM 及 Agent 的调用。",
+    description="基于 LangChain 的 LLM 及 Agent 的调用，基座模型为 DeepSeek v3。",
 )
 
 # deepseek v3 路由

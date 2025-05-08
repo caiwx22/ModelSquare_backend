@@ -1,0 +1,21 @@
+event: metadata
+data: {"run_id": "03e76aa4-453e-408a-ac51-6b23f9e1f7e7"}
+
+event: data
+data: {"actions":[{"tool":"arxiv","tool_input":"Transformer model\"  \n","log":"I need to find the title of the paper that introduced the Transformer model. Since this is a well-known paper in the field of computer science, I can use the arXiv tool to search for it.\n\nAction: arxiv  \nAction Input: \"Transformer model\"  \n","type":"AgentAction"}],"messages":[{"content":"I need to find the title of the paper that introduced the Transformer model. Since this is a well-known paper in the field of computer science, I can use the arXiv tool to search for it.\n\nAction: arxiv  \nAction Input: \"Transformer model\"  \n","additional_kwargs":{},"response_metadata":{},"type":"ai","name":null,"id":null,"example":false,"tool_calls":[],"invalid_tool_calls":[],"usage_metadata":null}]}
+
+event: data
+data: {"steps":[{"action":{"tool":"arxiv","tool_input":"Transformer model\"  \n","log":"I need to find the title of the paper that introduced the Transformer model. Since this is a well-known paper in the field of computer science, I can use the arXiv tool to search for it.\n\nAction: arxiv  \nAction Input: \"Transformer model\"  \n","type":"AgentAction"},"observation":"No good Arxiv Result was found"}],"messages":[{"content":"No good Arxiv Result was found","additional_kwargs":{},"response_metadata":{},"type":"human","name":null,"id":null,"example":false}]}
+
+: ping - 2025-05-08 07:37:08.316963+00:00
+
+event: data
+data: {"actions":[{"tool":"SerpAPI","tool_input":"提出transformer模型的论文标题\"  \n","log":"Since the arXiv search didn't yield results, I'll try a general web search to find the title of the paper that introduced the Transformer model.\n\nAction: SerpAPI  \nAction Input: \"提出transformer模型的论文标题\"  \n","type":"AgentAction"}],"messages":[{"content":"Since the arXiv search didn't yield results, I'll try a general web search to find the title of the paper that introduced the Transformer model.\n\nAction: SerpAPI  \nAction Input: \"提出transformer模型的论文标题\"  \n","additional_kwargs":{},"response_metadata":{},"type":"ai","name":null,"id":null,"example":false,"tool_calls":[],"invalid_tool_calls":[],"usage_metadata":null}]}
+
+event: data
+data: {"steps":[{"action":{"tool":"SerpAPI","tool_input":"提出transformer模型的论文标题\"  \n","log":"Since the arXiv search didn't yield results, I'll try a general web search to find the title of the paper that introduced the Transformer model.\n\nAction: SerpAPI  \nAction Input: \"提出transformer模型的论文标题\"  \n","type":"AgentAction"},"observation":"《Attention is all you need》这个名字来源于披头士乐队的歌曲《All You Need Is Love》，这是该论文的谷歌团队成员之一Llion Jones 提议用这个歌曲的名字改造的，他是来自英国伯明翰大学的硕士。"}],"messages":[{"content":"《Attention is all you need》这个名字来源于披头士乐队的歌曲《All You Need Is Love》，这是该论文的谷歌团队成员之一Llion Jones 提议用这个歌曲的名字改造的，他是来自英国伯明翰大学的硕士。","additional_kwargs":{},"response_metadata":{},"type":"human","name":null,"id":null,"example":false}]}
+
+event: data
+data: {"output":"提出Transformer模型的论文标题是《Attention Is All You Need》。","messages":[{"content":"I now know the final answer.\n\nFinal Answer: 提出Transformer模型的论文标题是《Attention Is All You Need》。","additional_kwargs":{},"response_metadata":{},"type":"ai","name":null,"id":null,"example":false,"tool_calls":[],"invalid_tool_calls":[],"usage_metadata":null}]}
+
+event: end

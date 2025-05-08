@@ -44,24 +44,25 @@ deepseek_v3_chain_with_memory = RunnableWithMessageHistory(
 )
 
 """
-response = deepseek_v3_chain_with_memory.invoke(
-    input={"input": "余弦是什么意思？请用最简单的语言解释"},
-    config={"configurable": {"session_id": "1"}}
-)
-
-print(response)
-
-response = deepseek_v3_chain_with_memory.invoke(
-    input={"input": "还是没懂。"},
-    config={"configurable": {"session_id": "2"}}
-)
-
-print(response)
-
-response = deepseek_v3_chain_with_memory.invoke(
-    input={"input": "还是没懂。"},
-    config={"configurable": {"session_id": "1"}}
-)
-
-print(response)
+if __name__ == '__main__':
+    response = deepseek_v3_chain_with_memory.invoke(
+        input={"input": "余弦是什么意思？请用最简单的语言解释"},
+        config={"configurable": {"session_id": "1"}}
+    )
+    
+    print(response)
+    
+    response = deepseek_v3_chain_with_memory.invoke(
+        input={"input": "还是没懂。"},
+        config={"configurable": {"session_id": "2"}}
+    )
+    
+    print(response)
+    
+    response = deepseek_v3_chain_with_memory.invoke(
+        input={"input": "还是没懂。"},
+        config={"configurable": {"session_id": "1"}}
+    )
+    
+    print(response)
 """

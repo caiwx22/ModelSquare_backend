@@ -12,7 +12,8 @@ load_dotenv()
 
 # 搜索引擎工具
 params = {
-    "engine": "bing",
+    # "engine": "bing",
+    "engine": "google",
     "gl": "us",
     "hl": "en",
 }
