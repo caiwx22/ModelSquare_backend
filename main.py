@@ -1,6 +1,7 @@
 from DeepSeek_v3 import deepseek_v3_chain_with_memory
 from DeepSeek_v3_agent import deepseek_v3_agent_chain_with_memory
 from Chat_history import router as history_router
+from Chat_summary import router as summary_router
 
 from fastapi import FastAPI
 from langserve import add_routes
@@ -20,6 +21,9 @@ add_routes(app, deepseek_v3_agent_chain_with_memory, path="/chat/deepseek_v3_age
 
 # 所有历史记录路由
 app.include_router(history_router)
+
+# 对话摘要路由
+app.include_router(summary_router)
 
 
 if __name__ == "__main__":

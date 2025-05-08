@@ -14,6 +14,7 @@ load_dotenv()
 
 # Agent 的提示词
 prompt = hub.pull("hwchase17/react")
+# print(prompt)
 
 # 初始化 LLM
 llm = ChatDeepSeek(
